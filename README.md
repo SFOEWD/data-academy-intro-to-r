@@ -2,6 +2,21 @@
 This repository contains the course materials for Data Academy’s
 Introduction to R course.
 
+## Setup
+
+1.  Clone/download the repository onto your computer. Then open
+    `data-academy-intro-to-r.Rproj` in RStudio (should just be able to
+    double-click the file).
+
+2.  Open `R/install_packages.R` and click ‘Source’. This should install
+    the required packages for the workshop.
+
+3.  During the workshop, open `R/script.R` and follow along, executing
+    each line of code.
+
+4.  After the workshop, complete the lab exercises below in a new R
+    script.
+
 ## Lab
 
 1.  Read `data/flights.rds` into R, naming the output `flights`.
