@@ -1,0 +1,9 @@
+install.packages(
+  c(
+    "tidyverse",
+    "gt",
+    "RSocrata",
+    "clipr",
+    "writexl"
+  )
+)
