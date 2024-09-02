@@ -19,13 +19,15 @@ Introduction to R course.
 
 ## Lab
 
+In a new script, load the tidyverse and complete the exercises below.
+
 1.  Read `data/flights.rds` into R, naming the output `flights`.
 
 2.  From `flights`, select the year, month, and day columns.
 
 3.  From `flights`, select all columns except carrier.
 
-4.  Sort `flights` to find the flights with longest departure delays.
+4.  Sort `flights` by carrier.
 
 5.  Sort `flight` by departure delay in descending order.
 
@@ -41,7 +43,7 @@ Introduction to R course.
 
 - Had an arrival delay of two or more hours
 - Flew to Houston (IAH or HOU)
-- Were operated by United, American, or Delta
+- Were operated by United (UA), American (AA), or Delta (DL)
 - Departed in summer (July, August, and September)
 
 11. Count the flight destinations by origin.
@@ -59,9 +61,11 @@ Introduction to R course.
     destination is “IAH”, then find the average arrival delays, grouped
     by year, month, and day.
 
-16. Which carrier has the highest average delays?
+16. Which carrier has the highest average delays, both arrival and
+    departure? Calculate both within summarize().
 
 17. During which month is there the highest average departure delays?
+    The lowest?
 
 18. Read `data/airports.rds` into R, naming the output `airports`.
 
@@ -70,8 +74,10 @@ Introduction to R course.
     `intl_airports`.
 
 20. In a single pipeline, select `sched_arr_time`, `arr_delay`, `dest`
-    from `flights`, left join `intl_airports` using `dest` as the ‘key’,
-    and then count the airport names. Sort the output.
+    from `flights`, inner join `intl_airports` using `dest` as the
+    ‘key’, and then count the airport names. Sort the output. Then use a
+    left join instead of an inner join. What’s different? And why is it
+    different?
 
 21. A pattern we haven’t seen yet is `group_by()` followed by
     `mutate()`. Compare the two outputs below:
@@ -88,4 +94,4 @@ penguins %>%
 
 How are they different? How does the output change if we add
 `%>% ungroup()` to the end? Why might we want to add `ungroup()` after
-we’ve completed a grouping operation?
+we’ve completed a grouping operation (it’s usually a good decision)?
