@@ -17,7 +17,7 @@ Introduction to R course.
 4.  After the workshop, complete the lab exercises below in a new R
     script.
 
-## Lab
+## Lab 1
 
 In a new script, load the tidyverse and complete the exercises below.
 
@@ -95,3 +95,11 @@ penguins %>%
 How are they different? How does the output change if we add
 `%>% ungroup()` to the end? Why might we want to add `ungroup()` after
 we’ve completed a grouping operation (it’s usually a good decision)?
+
+------------------------------------------------------------------------
+
+## Lab 2
+
+Find [a dataset or two on DataSF](https://datasf.org/opendata/) that
+interests you. Then write a script that imports, cleans, and visualizes
+the data.
