@@ -1,5 +1,12 @@
 ## Tip: use Ctrl (or Cmd) + Enter to run the code line by line
 
+## Reading the Console
+# library(zoo)
+
+mean("1")
+
+log("1")
+
 ## Variable Assignment
 a <- 5
 a = 5
@@ -8,6 +15,8 @@ b <- 4
 b
 c <- a + b
 c
+
+
 test_scores <- c(82, 89, 92, 75, 74, 99)
 test_scores
 
@@ -56,6 +65,7 @@ month_levels <- c(
 )
 
 m <- factor(m, levels = month_levels)
+class(m)
 sort(m)
 
 
@@ -119,6 +129,10 @@ df <- tibble(
 )
 df
 
+## Built-in Datasets
+str(iris)
+
+str(mtcars)
 
 ## Subsetting data frames
 df$x
@@ -325,18 +339,19 @@ air_traffic %>%
 
 
 ## left_join()
-df1 <- tibble(x = 1:3)
-df2 <- tibble(x = c(1, 2), y = c("first", "second"))
+df1 <- tibble(c1 = 1:3, c2 = c("x1", "x2", "x3"))
+df2 <- tibble(c1 = c(1, 2, 4), c3 = c("y1", "y2", "y4"))
 df1
 df2
-left_join(df1, df2, by = "x") # or df1 %>% left_join(df2, join_by(x))
+left_join(df1, df2, by = "c1") # or df1 %>% left_join(df2, join_by(c1))
 
 ## left_join() (multiple matches)
-df1 <- tibble(id = 1:3)
-df2 <- tibble(code = c(1, 1, 2), y = c("first", "second", "third"))
+
+df1 <- tibble(id1 = 1:3, c2 = c("x1", "x2", "x3"))
+df2 <- tibble(id2 = c(1, 2, 4, 2), c3 = c("y1", "y2", "y4", "y5"))
 df1
 df2
-df1 %>% left_join(df2, join_by(id == code))
+df1 %>% left_join(df2, join_by(id1 == id2))
 
 ## inner_join()
 x <- tibble(c1 = 1:3, c2 = c("x1", "x2", "x3"))
@@ -350,7 +365,9 @@ nrow(penguins_2007)
 nrow(penguins_2008)
 
 all_penguins <- bind_rows(penguins_2007, penguins_2008)
+# or all_penguins <- penguins_2007 %>% bind_rows(penguins_2008)
 all_penguins
+
 
 
 ## Practice joining data!
