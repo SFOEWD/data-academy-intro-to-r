@@ -376,7 +376,7 @@ airlines <- read_rds("data/airlines.rds")
 planes <- read_rds("data/planes.rds")
 airports <- read_rds("data/airports.rds")
 
-left_join(flights, airlines, by = join_by(carrier))
+left_join(flights, airlines, join_by(carrier))
 
 flights %>%
   left_join(airports, join_by(dest == faa)) %>%
