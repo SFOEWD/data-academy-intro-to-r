@@ -158,6 +158,7 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) +
     x = "city driving (mpg)",
     y = "highway driving (mpg)"
   ) +
+  # hrbrthemes::theme_ipsum()
   pilot::theme_pilot() # must install the pilot package from GitHub
 
 # Saving plots
