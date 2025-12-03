@@ -178,9 +178,9 @@ penguins <- read_csv("data/penguins.csv")
 
 
 ## Reading from DataSF
-library(RSocrata)
-crashes <- read.socrata("https://data.sfgov.org/resource/dau3-4s8f.csv")
-# crashes <- read_csv("https://data.sfgov.org/resource/dau3-4s8f.csv")
+# library(RSocrata)
+# crashes <- read.socrata("https://data.sfgov.org/resource/dau3-4s8f.csv")
+crashes <- read_csv("https://data.sfgov.org/resource/dau3-4s8f.csv?$limit=999999")
 glimpse(crashes)
 
 
@@ -316,7 +316,7 @@ penguins %>%
 penguins %>% count(species)
 
 ## Practice using tidyverse functions!
-air_traffic <- read.socrata("https://data.sfgov.org/resource/rkru-6vcg.csv")
+air_traffic <- read_csv("https://data.sfgov.org/resource/rkru-6vcg.csv?$limit=9999999")
 
 # How many passengers deplaned from airlines with 'China' in their name?
 air_traffic %>%
