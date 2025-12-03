@@ -6,6 +6,11 @@ pak::pkg_install(
     "tidyverse",
     "gt",
     "writexl",
-    "Chicago/RSocrata"
+    "gghighlight",
+    "ggtext",
+    "ggstatsplot",
+    "ggrepel",
+    "gapminder",
+    "gganimate"
     )
   )
